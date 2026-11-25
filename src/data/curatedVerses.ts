@@ -1,0 +1,91 @@
+import type { GitaThemeTag } from '../types/app';
+
+export interface CuratedVerseMeta {
+  id: string;
+  theme: GitaThemeTag;
+}
+
+export const CURATED_VERSES: CuratedVerseMeta[] = [
+  { id: '2.11', theme: 'Wisdom' },
+  { id: '2.13', theme: 'Wisdom' },
+  { id: '2.14', theme: 'Equanimity' },
+  { id: '2.15', theme: 'Equanimity' },
+  { id: '2.20', theme: 'Wisdom' },
+  { id: '2.22', theme: 'Wisdom' },
+  { id: '2.27', theme: 'Equanimity' },
+  { id: '2.38', theme: 'Equanimity' },
+  { id: '2.40', theme: 'Action' },
+  { id: '2.47', theme: 'Action' },
+  { id: '2.48', theme: 'Equanimity' },
+  { id: '2.50', theme: 'Action' },
+  { id: '2.55', theme: 'Self-Mastery' },
+  { id: '2.56', theme: 'Equanimity' },
+  { id: '2.62', theme: 'Self-Mastery' },
+  { id: '2.63', theme: 'Self-Mastery' },
+  { id: '2.70', theme: 'Equanimity' },
+  { id: '2.71', theme: 'Equanimity' },
+  { id: '3.8', theme: 'Action' },
+  { id: '3.19', theme: 'Action' },
+  { id: '3.21', theme: 'Action' },
+  { id: '3.27', theme: 'Wisdom' },
+  { id: '3.30', theme: 'Devotion' },
+  { id: '3.35', theme: 'Action' },
+  { id: '4.7', theme: 'Devotion' },
+  { id: '4.8', theme: 'Devotion' },
+  { id: '4.11', theme: 'Devotion' },
+  { id: '4.18', theme: 'Action' },
+  { id: '4.38', theme: 'Wisdom' },
+  { id: '4.39', theme: 'Wisdom' },
+  { id: '5.10', theme: 'Action' },
+  { id: '5.18', theme: 'Equanimity' },
+  { id: '5.22', theme: 'Self-Mastery' },
+  { id: '5.29', theme: 'Equanimity' },
+  { id: '6.5', theme: 'Self-Mastery' },
+  { id: '6.6', theme: 'Self-Mastery' },
+  { id: '6.16', theme: 'Self-Mastery' },
+  { id: '6.17', theme: 'Self-Mastery' },
+  { id: '6.26', theme: 'Self-Mastery' },
+  { id: '6.30', theme: 'Devotion' },
+  { id: '6.35', theme: 'Self-Mastery' },
+  { id: '7.7', theme: 'Wisdom' },
+  { id: '7.19', theme: 'Devotion' },
+  { id: '8.6', theme: 'Wisdom' },
+  { id: '8.7', theme: 'Devotion' },
+  { id: '9.22', theme: 'Devotion' },
+  { id: '9.26', theme: 'Devotion' },
+  { id: '9.27', theme: 'Devotion' },
+  { id: '9.34', theme: 'Devotion' },
+  { id: '10.20', theme: 'Wisdom' },
+  { id: '11.32', theme: 'Wisdom' },
+  { id: '11.55', theme: 'Devotion' },
+  { id: '12.13', theme: 'Equanimity' },
+  { id: '12.14', theme: 'Equanimity' },
+  { id: '12.15', theme: 'Equanimity' },
+  { id: '13.28', theme: 'Wisdom' },
+  { id: '14.22', theme: 'Equanimity' },
+  { id: '15.7', theme: 'Wisdom' },
+  { id: '15.15', theme: 'Wisdom' },
+  { id: '16.1', theme: 'Self-Mastery' },
+  { id: '16.3', theme: 'Self-Mastery' },
+  { id: '16.21', theme: 'Self-Mastery' },
+  { id: '17.3', theme: 'Wisdom' },
+  { id: '17.15', theme: 'Self-Mastery' },
+  { id: '18.20', theme: 'Wisdom' },
+  { id: '18.45', theme: 'Action' },
+  { id: '18.46', theme: 'Action' },
+  { id: '18.47', theme: 'Action' },
+  { id: '18.58', theme: 'Devotion' },
+  { id: '18.61', theme: 'Wisdom' },
+  { id: '18.63', theme: 'Wisdom' },
+  { id: '18.65', theme: 'Devotion' },
+  { id: '18.66', theme: 'Devotion' },
+  { id: '18.78', theme: 'Action' },
+];
+
+const CURATED_THEME_MAP = new Map<string, GitaThemeTag>(
+  CURATED_VERSES.map((item) => [item.id, item.theme])
+);
+
+export function getCuratedTheme(verseId: string): GitaThemeTag | null {
+  return CURATED_THEME_MAP.get(verseId) ?? null;
+}
